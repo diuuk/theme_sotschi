@@ -6,7 +6,8 @@
 
 .fg-web-page-title-bar {
   position: relative;
-  margin-bottom: 20px;
+  background-color: white;
+  padding: 0 15px;
 }
 .fg-theme-page-title-container {
 	margin-top: 0;
@@ -211,7 +212,6 @@ h1, h2, h3, h4, h5, h6 {
 -----------------------------------------------------------------------------*/
 
 .fg-web-theme .fg-web-main-content {
-  padding-bottom: 30px;
   min-height: 300px;
 }
 @media only screen and (max-width: 991px) {
@@ -425,7 +425,7 @@ button {
 	text-align: left; /* bootstrap override */
 }
 
-.fg-web-theme .btn:not(.selectpicker):not(.fg-upload-btn) {
+.fg-web-theme .fg-web-main-content .btn:not(.selectpicker):not(.fg-upload-btn) {
     -webkit-border-radius: 18px;
     -moz-border-radius: 18px;
     -ms-border-radius: 18px;

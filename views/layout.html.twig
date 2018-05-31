@@ -124,9 +124,11 @@
 	 	   <!-- END THEME MAIN AREA EMPTY BOX -->
 
             <!-- BEGIN FOOTER -->
+            <div class="theme-footerarea">
             {% if (( pagecontentData.footer is defined ) and (pagecontentData.footer|length >0)) %}
                 {{ include(fgtheme.getViewPage('footerFile')) }}
             {% endif %}
+            </div>
             <!-- END FOOTER -->
 
             <div class="fg-web-promobox-wrapper"> </div>
