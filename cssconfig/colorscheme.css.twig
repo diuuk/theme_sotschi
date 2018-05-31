@@ -15,20 +15,25 @@
 {% endif %} 
 .fg-web-theme {
     background: {{ TM_BACKGROUND_COLOR|raw }};
-    color: {{ TM_INVERSE_COLOR|raw }};
+    color: {{ TM_MAIN_TEXT_COLOR|raw }};
 }
-.fg-web-theme .btn:not(.selectpicker) {
-    color: {{ TM_BACKGROUND_COLOR|raw }};
+.fg-web-theme .fg-web-main-content .btn:not(.selectpicker):not(.fg-upload-btn) {
+    border-color: {{ TM_LINKSBUTTONS_COLOR|raw }};
+    color: {{ TM_LINKSBUTTONS_COLOR|raw }};
+    background : {{ TM_BOX_BACKGROUND_COLOR|raw }};
+}
+.fg-web-theme .fg-web-main-content .btn:not(.selectpicker):not(.fg-upload-btn):hover {
     background : {{ TM_LINKSBUTTONS_COLOR|raw }};
-}
-.fg-web-theme .btn:not(.selectpicker):hover {
-    background : {{ TM_HIGHLIGHTING_COLOR|raw }};
+    color: {{ TM_BOX_BACKGROUND_COLOR|raw }};
 }
 .fg-web-theme a {
     color : {{ TM_LINKSBUTTONS_COLOR|raw }};
 }
 .fg-web-theme a:hover {
     color : {{ TM_HIGHLIGHTING_COLOR|raw }};
+}
+.fg-web-theme caption{
+	color: {{ TM_MAIN_TEXT_COLOR|raw }};
 }
 .fg-web-theme .fg-login-widget .form-group input {
     background: {{ TM_BACKGROUND_COLOR|raw }};
@@ -66,8 +71,7 @@
     color : {{ fgtwig.calculateOpacity(TM_INVERSE_COLOR|raw, 50)|raw }} ;
 }
 .fg-web-theme .fg-web-page-header {
-    border-color : {{ fgtwig.calculateOpacity(TM_INVERSE_COLOR|raw, 20)|raw }} ;
-    background: {{ TM_BACKGROUND_COLOR|raw }};
+    background: {{ TM_BOX_BACKGROUND_COLOR|raw }};
 }
 .fg-web-theme .fg-web-page-header .fg-web-top-nav-wrapper {
     border-color : {{ fgtwig.calculateOpacity(TM_INVERSE_COLOR|raw, 10)|raw }}; 
