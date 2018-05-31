@@ -136,7 +136,7 @@
     }
 }
 .fg-web-theme .fg-web-page-title-bar {
-    background : {{ fgtwig.calculateOpacity(TM_INVERSE_COLOR|raw, 10)|raw }}; 
+    background : {{ TM_BOX_BACKGROUND_COLOR|raw }}; 
 }
 .fg-web-theme .fg-web-page-container h2 {
     color : {{ TM_INVERSE_COLOR|raw }};
@@ -159,7 +159,7 @@
 .fg-web-theme .fg-web-page-container .fg-calendar-event-widget .fg-event-block .fg-event-date {
     color : {{ TM_INVERSE_COLOR|raw }};
 }
-.fg-web-theme .fg-web-page-footer {
+.fg-web-theme .theme-footerarea {
     background : {{ TM_INVERSE_COLOR|raw }};
     color: {{ TM_BACKGROUND_COLOR|raw }};
 }
