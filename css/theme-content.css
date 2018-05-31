@@ -1,0 +1,503 @@
+/* -------------------------------------------------------------------------
+* 03 - Page title bar
+-----------------------------------------------------------------------------*/
+
+/* common */
+
+.fg-web-page-title-bar {
+  position: relative;
+  margin-bottom: 20px;
+}
+.fg-theme-page-title-container {
+	margin-top: 0;
+}
+.fg-web-page-title-bar:not(.has-breadcrumbs) {
+}
+.fg-web-page-title-bar .fg-web-page-title {
+}
+
+@media only screen and (max-width: 991px) {
+  .fg-web-page-title-bar .container {
+    width: auto;
+  }
+}
+.fg-web-titlebar-left-col {
+  outline: none;
+  position: relative;
+  z-index: 1;
+}
+.fg-titlebar-block {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.fg-web-page-title-bar.has-close-btn .fg-web-titlebar-left-col {
+  width: calc(100% - 185px);
+  display: inline-block;
+  float: none !important;
+  vertical-align: middle;
+}
+.fg-web-page-title-bar.has-close-btn .fg-web-titlebar-left-col.close-btn-only {
+  width: calc(100% - 50px);
+}
+.fg-web-page-title-bar.has-close-btn .fg-web-titlebar-left-col.close-btn-only + .fg-web-titlebar-right-col .fg-page-close {
+  margin: 0;
+}
+.fg-web-page-title-bar.has-close-btn .fg-web-titlebar-left-col.close-btn-only + .fg-web-titlebar-right-col + .fg-web-title-filter-wrapper {
+  display: none;
+}
+@media only screen and (max-width: 767px) {
+  .fg-web-page-title-bar.has-close-btn .fg-web-titlebar-left-col {
+    width: calc(100% - 60px);
+  }
+}
+.fg-web-titlebar-right-col {
+  position: relative;
+  z-index: 1;
+  margin-top: 7px;
+}
+.fg-web-page-title-bar.has-close-btn .fg-web-titlebar-right-col {
+  display: inline-block;
+  float: none !important;
+  vertical-align: middle;
+}
+
+/* search */
+
+.fg-web-page-title-bar input[type="text"] {
+  padding: 6px 10px;
+}
+.fg-web-page-title-bar input[type="text"], 
+.fg-web-page-title-bar .bootstrap-select {
+  height: 34px;
+  background: #fff;
+  color: #333;
+  outline: none;
+  border: 1px solid;
+  width: 100% !important;
+}
+.fg-web-page-title-bar .fg-page-search {
+  margin-right: 0;
+  width: 160px;
+}
+
+/* dropdown filters */
+
+.fg-web-page-title-bar .fg-page-timeperiod {
+  width: 160px;
+}
+.fg-web-page-title-bar .bootstrap-select .selectpicker {
+  height: 34px;
+  border: 0;
+  font-size: 15px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.fg-web-page-title-bar .bootstrap-select .dropdown-menu li a {
+  outline: none;
+}
+.fg-web-page-title-bar .bootstrap-select .dropdown-menu li a span.text {
+  margin-right: 5px;
+}
+.fg-web-page-title-bar .fg-web-title-filter-wrapper > .fg-titlebar-block {
+  width: 170px;
+}
+@media only screen and (max-width: 767px) {
+  .fg-web-page-title-bar .fg-web-title-filter-wrapper {
+    float: none !important;
+    width: 100%;
+    clear: both;
+  }
+  .fg-web-page-title-bar .fg-web-title-filter-wrapper > .fg-titlebar-block {
+    width: 49%;
+    margin: 0;
+  }
+  .fg-web-page-title-bar .fg-web-title-filter-wrapper > .fg-titlebar-block.fg-page-search {
+    width: 100%;
+  }
+}
+.fg-web-page-title-bar .fg-web-title-filter-wrapper .bootstrap-select .dropdown-menu {
+  padding: 0;
+  margin: 0;
+}
+.fg-web-page-title-bar .fg-web-title-filter-wrapper .bootstrap-select .selectpicker {
+  height: 100%;
+  max-height: 250px !important;
+}
+
+/* buttons/icons */
+
+.fg-web-page-title-bar [class^='fg-icon'], .fg-web-page-title-bar div[class*=' fg-icon'] {
+  cursor: pointer;
+}
+.fg-web-page-title-bar .fg-icon-bg .fg-icon {
+  width: 44px;
+  height: 44px;
+  background-image: url("../../img/close-next-prev-sprite.png");
+  display: block;
+}
+.fg-web-page-title-bar .fg-icon-bg.fg-page-prev .fg-icon {
+  background-position: 0 0;
+}
+.fg-web-page-title-bar .fg-icon-bg.fg-page-prev .fg-icon:hover {
+  background-position: 0 -46px;
+}
+.fg-web-page-title-bar .fg-icon-bg.fg-page-next .fg-icon {
+  background-position: -46px 0px;
+}
+.fg-web-page-title-bar .fg-icon-bg.fg-page-next .fg-icon:hover {
+  background-position: -46px -46px;
+}
+.fg-web-page-title-bar .fg-icon-bg.fg-page-close .fg-icon {
+  background-position: -98px 0px;
+  background-size: 350%;
+}
+.fg-web-page-title-bar .fg-icon-bg.fg-page-close .fg-icon:hover {
+  background-position: -98px -50px;
+}
+
+/* breadcrumbs */
+
+@media only screen and (min-width: 768px) {
+  .fg-web-page-title-bar.has-breadcrumbs .fg-web-titlebar-left-col.has-breadcrumb {
+    max-width: calc(100% - 180px);
+  }
+}
+@media only screen and (max-width: 767px) {
+  .fg-web-page-title-bar.has-breadcrumbs .fg-web-titlebar-left-col.has-breadcrumb {
+    max-width: calc(100% - 60px);
+  }
+}
+@media only screen and (max-width: 767px) {
+  .fg-web-page-title-bar.has-breadcrumbs .fg-web-titlebar-left-col.has-breadcrumb .fg-breadcrumb-block {
+    position: static;
+  }
+}
+.fg-web-page-title-bar.has-breadcrumbs .fg-web-titlebar-left-col.has-breadcrumb .fg-breadcrumb-block .fg-breadcrumbs {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+}
+.fg-web-page-title-bar.has-breadcrumbs .fg-web-titlebar-left-col.has-breadcrumb .fg-breadcrumb-block .fg-breadcrumbs li {
+  display: inline-block;
+}
+.fg-web-page-title-bar.has-breadcrumbs .fg-web-titlebar-left-col.has-breadcrumb .fg-breadcrumb-block .fg-breadcrumbs li a {
+  text-decoration: none;
+}
+.fg-web-page-title-bar.has-breadcrumbs .fg-web-titlebar-left-col.has-breadcrumb .fg-breadcrumb-block .fg-breadcrumbs li:after {
+  content: "\f105";
+  font-family: FontAwesome !important;
+  margin: 0 3px 0 8px;
+  display: inline-block;
+}
+.fg-web-page-title-bar.has-breadcrumbs .fg-web-titlebar-left-col.has-breadcrumb .fg-breadcrumb-block .fg-breadcrumbs li:last-child:after {
+  display: none;
+}
+.fg-web-page-title-bar.has-breadcrumbs .fg-web-titlebar-right-col {
+  line-height: 55px;
+}
+
+/* headers */
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0; /* bootstrap override */
+}
+
+
+/* -------------------------------------------------------------------------
+* 03 - Main content
+-----------------------------------------------------------------------------*/
+
+.fg-web-theme .fg-web-main-content {
+  padding-bottom: 30px;
+  min-height: 300px;
+}
+@media only screen and (max-width: 991px) {
+  .fg-web-theme .fg-web-main-content > .container {
+    width: auto;
+    padding: 0;
+  }
+}
+
+/* element */
+
+.fg-widget-block {
+	margin: 10px 0; /* fg-web-style override */
+}
+
+/* Paginations (portrait element, …?) */
+
+.fg-pagination li {
+  margin: 0 1px 0 2px;
+  font-size: 17px;
+  display: inline-block;
+}
+.fg-pagination li.disabled {
+  pointer-events: none;
+}
+.fg-pagination li.disabled span {
+  opacity: .7;
+}
+.fg-pagination li.disabled span i {
+  opacity: .5;
+}
+.fg-pagination li > a, 
+.fg-pagination li > span {
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+  display: inline-block;
+  min-width: 1.5em;
+  padding: 0.5em 1em;
+  text-align: center;
+  cursor: pointer;
+  color: #333;
+  background: none;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+.fg-pagination li > a.prev, 
+.fg-pagination li > span.prev {
+  padding: 9px 18px;
+  position: relative;
+  left: -1px;
+}
+.fg-pagination li > a.next, 
+.fg-pagination li > span.next {
+  padding: 9px 18px;
+  position: relative;
+  left: -1px;
+}
+
+/* Datatables paginations (contact table element, …?) */
+
+.dataTables_paginate .paginate_button {
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+}
+.dataTables_paginate .paginate_button.disabled {
+  border: 1px solid #ddd;
+  color: #ddd;
+}
+.dataTables_paginate .paginate_button.disabled .fa {
+  color: #ddd;
+}
+.dataTables_paginate .paginate_button.disabled:hover {
+  border: 1px solid #ddd;
+}
+.fg-datatable .dataTables_paginate span .paginate_button:not(.current) {
+  display: none;
+}
+@media only screen and (max-width: 767px) {
+  .dataTables_paginate span .paginate_button:not(.current) {
+    display: none;
+  }
+}
+
+/* -------------------------------------------------------------------------
+* 03.01 - Header elements
+-----------------------------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: normal;
+}
+
+.fg-header-widget {
+    text-align: left;
+}
+
+.fg-header-widget {
+	z-index: 1;
+	padding: 11px 13px;
+	overflow: hidden;
+	margin: -11px -13px 0;
+}
+.fg-header-widget h2:before {
+	top: 0;
+	right: 0;
+	z-index: -1;
+	content: "";
+	bottom: auto;
+	height: 100%;
+	width: 130%;
+	position: absolute;
+	-webkit-transform: skew(-15deg);
+	-moz-transform: skew(-15deg);
+	-ms-transform: skew(-15deg);
+	-o-transform: skew(-15deg);
+	transform: skew(-15deg);
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6d6d6d+0,ffc200+100 */
+	background: #6d6d6d; /* Old browsers */
+	background: -moz-linear-gradient(-15deg, #ffffff 0%, #ffc200 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-15deg, #ffffff 0%,#ffc200 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(105deg, #ffffff 0%,#ffc200 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffc200',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.fg-header-widget h2 {
+	padding: 0; /* fg-web-style override */
+	margin-top: 0; /* fg-web-style override */
+	margin-bottom: 0; /* fg-web-style override */
+	padding: 15px 25px 15px 0;
+	width: auto;
+	font-size: 20px;
+}
+.fg-header-widget h2:after {
+	display: none; /* fg-web-style override */
+}
+.fg-header-widget h3 {
+	padding: 0 0 10px 0;
+}
+.fg-header-widget h3:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #ffc200; /* theme config */
+  position: absolute;
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+/* -------------------------------------------------------------------------
+* 03.02 - Image/video elements
+-----------------------------------------------------------------------------*/
+
+.fg-image-gallery-widget,
+.fg-gallery-rows,
+.fg-map-widget {
+	margin: 0 -13px;
+}
+
+/* -------------------------------------------------------------------------
+* 03.03 - Form elements
+-----------------------------------------------------------------------------*/
+
+.form-group * {
+  font-size: 17px;
+}
+
+input,
+textarea,
+button {
+  outline: 0;
+}
+
+.datepicker {
+  color: #333;
+}
+.datepicker th,
+.datepicker td {
+  cursor: pointer;
+  text-align: center;
+}
+
+.fg-grid-col-1 .fg-form-widget .form-group label, 
+.fg-grid-col-2 .fg-form-widget .form-group label, 
+.fg-grid-col-1 .fg-nl-subscription-widget .form-group label, 
+.fg-grid-col-2 .fg-nl-subscription-widget .form-group label {
+    padding-top: 0; /* fg-web-style override */
+    padding-bottom: 0; /* fg-web-style override */
+}
+.fg-form-widget fieldset,
+.fg-nl-subscription-widget fieldset {
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+	border-radius: 6px;
+}
+.fg-form-widget fieldset > legend, 
+.fg-nl-subscription-widget fieldset > legend {
+	font-weight: inherit; /* fg-web-style override */
+	background-color: transparent; /* fg-web-style override */
+	margin: 0; /* fg-web-style override */
+	left: 0; /* fg-web-style override */
+	top: 0; /* fg-web-style override */
+}
+.form-horizontal .control-label {
+	text-align: left; /* bootstrap override */
+}
+
+.fg-web-theme .btn:not(.selectpicker):not(.fg-upload-btn) {
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    -ms-border-radius: 18px;
+    border-radius: 18px;
+	padding: 6px 18px;
+	border: 1px solid #ccc;
+}
+
+.form-control:focus,
+.bootstrap-select .btn:focus {
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(147,161,187,.6) !important; /* fg-web-style override */
+}
+
+/* -------------------------------------------------------------------------
+* 03.04 - calendar elements
+-----------------------------------------------------------------------------*/
+
+.fg-calendar-event-widget .fg-event-block {
+	border: 0;
+	padding: 0 0 6px;
+}
+.fg-calendar-event-widget .fg-event-block:last-child {
+	margin-bottom: 0; /* fg-web-style override */
+	border-bottom: 0; /* fg-web-style override */
+}
+
+/* -------------------------------------------------------------------------
+* 03.05 - NL archive elements
+-----------------------------------------------------------------------------*/
+
+.fg-nl-archive-widget table.dataTable tr td:first-child {
+	max-width: 200px; /* does not work – why? Move to fg-we-style */
+}
+
+/* -------------------------------------------------------------------------
+* 03.11 - Gallery special page
+-----------------------------------------------------------------------------*/
+
+/* wedge */
+.fg-gallery-album .fg-image:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 15px 15px 15px;
+  border-color: transparent transparent #fff transparent;
+  position: absolute;
+  bottom: -1px;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+
+
+/* -------------------------------------------------------------------------
+* 03.12 - Calendar special page
+-----------------------------------------------------------------------------*/
+
+.fg-calendar-detail-wrapper .fg-calendar-meta-details-block > li > .fg-right {
+  font-weight: lighter;
+}
+
+
+/* -------------------------------------------------------------------------
+* 03.12 - Article special page
+-----------------------------------------------------------------------------*/
+
+.fg-article-special-contents-wrapper .fg-article-content-block .fg-footer .fg-cat-tags > span {
+	border-radius: 12px;
+}
+.fg-article-special-contents-wrapper .fg-article-content-block .fg-footer {
+    border: 0; /* fg-web-style override */
+    padding: 0; /* fg-web-style override */
+}

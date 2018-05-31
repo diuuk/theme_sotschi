@@ -1,0 +1,175 @@
+{% set isHeader = (isHeader is defined) ? isHeader : true  %}
+{% set isNavigation = (isNavigation is defined) ? isNavigation : true  %}
+{% set previewFlag = (previewFlag is defined) ? previewFlag : 'website'  %}
+{% set isLoggedIn = (app.user and ('frontend1' in fgclub.get('bookedModulesDet')) and isNavigation == true ) ? true : false  %}
+{% set publicConfig = fgclub.get('publicConfig') %}
+{% set themeId = publicConfig.theme %}
+{% set headerClass =  (publicConfig.header_options is defined and publicConfig.header_options.type is defined and publicConfig.header_options.type == '') ? 'fg-header-'~publicConfig.header_options.type : '' %} 
+
+{% set bodyClass = ' ' %}
+{% set bodyClass = bodyClass ~ ((publicConfig.header_options is defined and publicConfig.header_options.header_label is defined and publicConfig.header_options.header_label|length > 0) ? ' fg-haslogo ' : '') %}
+{% set bodyClass = bodyClass ~ ((isLoggedIn == true) ? ' fg-has-admin-nav ' : '') %}
+{% set bodyClass = bodyClass ~ ((isHeader == true) ? headerClass : '') %}
+{% set bodyClass = bodyClass ~ ((publicConfig.header_options is defined and publicConfig.header_options.type is defined and publicConfig.header_options.type == 'sticky') ? 'fg-header-'~publicConfig.header_options.type : '') %}
+
+{% set containerClass = (publicConfig.container_fluid is defined and publicConfig.container_fluid) ? 'container-fluid': 'container'  %}
+
+{% set mainWrapperClass = ' fg-web-main-content ' %}
+{% if fgclub.get('publicConfig').bg_options.original_size is defined %} 
+    {% set mainWrapperClass = mainWrapperClass ~ ' fg-web-bg-org-size ' %}
+{% endif %} 
+{% if pagecontentData.sidebar is defined and pagecontentData.sidebar|length > 0 %} 
+    {% if pagecontentData.page.sidebar.side == 'left' %} {% set mainWrapperClass = (mainWrapperClass ~ ' fg-cms-page-sidebar-left ') %}  
+    {% elseif pagecontentData.page.sidebar.side == 'right' %} {% set mainWrapperClass = (mainWrapperClass ~ ' fg-cms-page-sidebar-right ') %}  
+    {% endif %} 
+{% endif %}
+
+{% set pagetitlebarContainerClass = (pagecontentData.hidePageTitle is defined and pagecontentData.hidePageTitle == '1')?' hide ':'' %}
+{% set mainContainerClass = (pagecontentData.hidePageTitle is defined and pagecontentData.hidePageTitle == '1')?' fg-marg-top-30 ':'' %}
+
+<!DOCTYPE html>
+<html lang="{{clubDefaultLang}}" data-ng-app="fairgate">
+
+    <!-- BEGIN HEAD -->
+    <head>
+        {{ include('::website/core/meta.html.twig', {'metaData': metaDetails ,'pagecontentData':pagecontentData,'defaultlang':clubDefaultLang}) }}
+        <!-- BEGIN CSS -->
+        {% block stylesheets %}
+            <!-- BEGIN GLOBAL MANDATORY STYLES -->
+                {{ include('::website/core/corelevel-styles.html.twig') }}
+            <!-- END GLOBAL MANDATORY STYLES -->
+
+            <!-- BEGIN FAIRGATE STYLE -->
+                {{ include('::website/core/fairgate-styles.html.twig') }}
+            <!--  END FAIRGATE STYLE -->
+
+
+            <!-- BEGIN THEME STYLE -->
+                <!-- Placeholder to include the theme related css by the theme designer -->
+                {{fgtheme.loadCss('theme.css')}}
+                {{fgtheme.loadCss('theme-content.css')}}
+                {{fgtheme.loadCss('theme-navigation.css')}}
+            <!-- END THEME STYLE -->
+
+            <!-- BEGIN FAIRGATE STYLE -->
+                {{ include('::website/core/themeconfiguration.html.twig') }}
+            <!--  END FAIRGATE STYLE -->
+
+            <!-- BEGIN PAGE STYLES -->
+            {% block customstylesheets %}
+
+            {% endblock %}
+            <!-- END PAGE STYLES -->
+        {% endblock %}
+        
+        {{ include('::global/google-analytic-web.html.twig') }}
+        <!-- END CSS --> 
+    </head>
+    <!-- END HEAD -->
+
+    <!-- BEGIN BODY -->
+    <body class="fg-web-theme {{bodyClass}}">
+        <div class="fg-web-bg-wrapper" id="fg-web-bg-wrapper-id">
+            <!-- BACKGROUND UNDERSCORE TEMPLATE included here -->
+        </div>
+        <div class = "fg-body-bg {{mainWrapperClass}}">
+            
+            <!-- BEGIN ADMIN HEADER -->
+            <div class="container-fluid fg-webpage-admin-header" id="webpage-admin-header">
+                <!-- HEADER UNDERSCORE TEMPLATE included here -->
+            </div>
+            <!-- END ADMIN HEADER -->     
+
+            <!-- BEGIN THEME MAIN AREA -->
+            <div class="theme-mainarea">
+
+            {{ include(fgtheme.getViewPage('headerFile')) }}
+
+            <div class="clearfix"> </div>
+
+            <!-- BEGIN CONTAINER -->
+            <main class="{{containerClass}} fg-visible-hidden">
+                
+                <div id="fg-dev-pagetitle-container" class="{{pagetitlebarContainerClass}}"></div>
+                
+                <div class="{{mainContainerClass}}">
+                    <div class="fg-web-page-container row">
+                        {% block websiteContentArea %}      
+                            <!-- SideBar Wrapper -->
+                            {% if ( ( pagecontentData.sidebar is defined ) and (pagecontentData.sidebar|length >0) and  (pagecontentData.page.sidebar.side =="left")) %}
+                                {{ include(fgtheme.getViewPage('sidebarFile')) }}
+                            {% endif %}
+
+                            <!-- BEGIN CONTENT -->
+                            {{ include(fgtheme.getViewPage('contentFile')) }}
+                            <!-- END CONTENT -->
+
+                            {#sidebar DISPLAY AREA START RIGHT#}
+                            {% if (( pagecontentData.sidebar is defined ) and (pagecontentData.sidebar|length >0) and  (pagecontentData.page.sidebar.side =="right") ) %}
+                                {{ include(fgtheme.getViewPage('sidebarFile')) }}
+                            {% endif %}
+                            {#sidebar DISPLAY AREA RIGHT END#}
+
+                        {% endblock  %}
+                        {% block websiteCustomContentArea %}      
+
+                        {% endblock  %}
+                    </div>
+                    <!-- END SideBar Wrapper -->
+                </div>
+            </main>
+            <!-- END CONTAINER -->
+
+			</div>
+	 	   <!-- END THEME MAIN AREA EMPTY BOX -->
+
+            <!-- BEGIN FOOTER -->
+            {% if (( pagecontentData.footer is defined ) and (pagecontentData.footer|length >0)) %}
+                {{ include(fgtheme.getViewPage('footerFile')) }}
+            {% endif %}
+            <!-- END FOOTER -->
+
+            <div class="fg-web-promobox-wrapper"> </div>
+            
+
+            <!-- BEGIN PAGE LEVEL UNDERSCORE TEMPLATE -->
+            <div id="divTemplates">
+                {{ include('::website/core/underscore-template.html.twig') }}
+                {% block underscoretemplate %}{% endblock %}
+            </div>
+            <!-- END PAGE LEVEL UNDERSCORE TEMPLATE -->
+
+
+            {% block scripts %}
+                <!-- BEGIN CORE JQUERY AND ANGULARJS PLUGINS -->
+                    {{ include('::website/core/corelevel-scripts.html.twig') }}
+                <!-- END CORE JQUERY AND ANGULARJS PLUGINS -->
+
+                <!-- BEGIN FAIRGATE SCRIPTS -->
+                    {{ include('::website/core/fairgate-scripts.html.twig') }}
+                    {{ include(fgtheme.getViewPage('themeScripts')) }}
+                <!-- END FAIRGATE SCRIPTS -->
+
+                <!-- BEGIN THEME SCRIPTS -->
+                    <!-- Placeholder to include the theme related js by the theme designer -->
+                <!-- END THEME SCRIPTS -->
+            {% endblock %}
+
+            <!-- BEGIN LAYOUT SCRIPTS -->
+                {{ include('::website/core/layout-scripts.html.twig') }}
+            <!-- END LAYOUT SCRIPTS -->
+                
+            <!-- BEGIN PAGE LEVEL SCRIPTS -->
+            {% block javascripts %}
+
+            {% endblock %}
+            <!-- END PAGE LEVEL SCRIPTS -->
+
+            {% if isLoggedIn %}
+                {{ include('::website/core/internal-topnavigation.html.twig') }}
+            {% endif %} 
+
+        </div>
+
+    </body>
+</html>
