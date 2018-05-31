@@ -61,8 +61,8 @@
 	color: rgba(256,256,256,1) !important; /* theme config */
 	letter-spacing: 0.5pt; /* theme config? */
 }
-.fg-web-main-nav .navbar-nav > li.active > a,
-.fg-web-main-nav .navbar-nav > li > a:hover {
+.fg-web-main-nav.navbar-default .navbar-nav > li.active > a,
+.fg-web-main-nav.navbar-default .navbar-nav > li > a:hover {
   border: 1px solid rgba(256,256,256,0.2); /* theme config */
   padding: 3px 10px;
   margin: 8px 2px;
@@ -204,6 +204,7 @@ li.dropdown-submenu > a::after {
 }
 .fg-web-nav-icon {
   position: absolute;
+  z-index: 2;
   top: 0;
   right: 25px;
   bottom: 0;
@@ -221,6 +222,7 @@ li.dropdown-submenu > a::after {
 }
 .fg-web-top-nav-icon {
   position: absolute;
+  z-index: 2;
   top: 0;
   right: 65px;
   bottom: 0;

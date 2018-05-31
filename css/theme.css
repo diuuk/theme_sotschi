@@ -11,23 +11,32 @@ a, a:active, a:focus {
 -----------------------------------------------------------------------------*/
 
 html {
-	position: relative; /* move to fg-web-style? */
+	/*position: relative;*/ /* move to fg-web-style? Kills mobile nav */
 	min-height: 100%; /* move to fg-web-style? */
 }
 body {
 	height: 100%; /* move to fg-web-style? */
 }
 .theme-mainarea {
-	/*background-color: rgba(1, 1, 1, 0.08);*/ /* theme config */
 	border-radius: 6px;
 	box-shadow: 0px 20px 50px rgba(0,0,0,0.16); /* theme config? */
-	position: absolute;
-	top: 30px;
-	bottom: 110px; /* How to adjust?? */
-	left: 0;
-	right: 0;
-	overflow: hidden;
-	z-index: -1;
+	margin: 0 auto 30px;
+	padding: 0;
+}
+@media (min-width: 768px) {
+  .theme-mainarea {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .theme-mainarea {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .theme-mainarea {
+    width: 1170px;
+  }
 }
 
 /* row, container */
@@ -36,14 +45,32 @@ body {
 	z-index: 1;
 	position: relative;
 }
-.row {
-	display: flex;
-	margin-bottom: 0 !important; /* override global-style.css fg-marg-btm-10 */
+@media (min-width: 992px) {
+	#fg-website-content .row {
+		display: flex;
+	}
 }
+.row {
+	margin-bottom: 0;
+}
+
 .fg-container,
-.fg-gallery-special-page-wrapper {
+.fg-team-special-page-wrapper {
 	background-color: rgba(256,256,256,0.9); /* theme config */
 	margin: 4px 2px 0;
+	padding: 0 13px;
+}
+.fg-gallery-special-page-wrapper,
+.fg-web-page-sidebar-wrapper {
+	background-color: rgba(256,256,256,0.9); /* theme config */
+	margin: 4px 0 0;
+	padding: 0 13px;
+}
+.fg-article-special-contents-wrapper .fg-article-content-block,
+.fg-calendar-special-contents-wrapper,
+.fg-article-detail-wrapper {
+	background-color: rgba(256,256,256,0.9); /* theme config */
+	margin: 4px 4px 0;
 	padding: 0 13px;
 }
 .fg-column-container:last-child .fg-container:first-child {
@@ -52,10 +79,13 @@ body {
 .fg-column-container:last-child .fg-container:last-child {
 	border-bottom-right-radius: 6px;
 }
-.fg-column-container {
+.fg-column-container,
+.fg-article-special-contents-wrapper,
+.fg-web-page-container {
 	margin-right: -17px;
 	margin-left: -17px;
 }
+
 
 
 /* -------------------------------------------------------------------------
@@ -117,7 +147,7 @@ body {
 	margin: 0;
 	text-transform: uppercase;
 	font-size: 10pt;
-    padding: 8px 0;
+    padding: 8px 15px;
 	z-index: 10;
 }
 @media only screen and (max-width: 991px) {
@@ -218,10 +248,14 @@ body {
 /* Wrapper for logo and main navigation */
 
 .fg-web-main-nav-bar {
-  padding: 0;
   position: relative;
   min-height: 35px;
   margin: 50px -15px 0;
+
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 0 15px;
 }
 @media only screen and (max-width: 767px) {
   .fg-web-main-nav-bar {
