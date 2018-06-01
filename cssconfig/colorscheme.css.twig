@@ -105,6 +105,14 @@
     background: {{ fgtwig.calculateOpacity(TM_INVERSE_COLOR|raw, 10)|raw }}; 
 }
 
+.fg-web-theme .fg-web-main-nav::before {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6d6d6d+0,ffc200+100  */
+	background: #6d6d6d; /* Old browsers */
+	background: -moz-linear-gradient(-15deg, #6d6d6d 0%, {{ TM_NAV_BACKGROUND_COLOR|raw }} 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-15deg, {{ TM_NAV_BACKGROUND_COLOR|raw }} 0%,#ffc200 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(105deg, #6d6d6d 0%,{{ TM_NAV_BACKGROUND_COLOR|raw }} 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d6d6d', endColorstr='{{ TM_NAV_BACKGROUND_COLOR|raw }}',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
 .fg-web-theme .fg-web-main-nav-bar .navbar-nav > li a {
     color : {{ TM_INVERSE_COLOR|raw }};
 }
@@ -301,8 +309,16 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(51,51,51,1)', endColorstr='{{ fgtwig.calculateOpacity(TM_INVERSE_COLOR|raw, 20)|raw }}',GradientType=1 );
   /* IE6-9 */
 }
-.fg-web-theme .fg-header-widget h2:after {
-    background : {{ TM_ACCENT_COLOR|raw }};
+.fg-web-theme .fg-header-widget h2:before {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6d6d6d+0,ffc200+100 */
+	background: #6d6d6d; /* Old browsers */
+	background: -moz-linear-gradient(-15deg, #ffffff 0%, {{ TM_HIGHLIGHTING_COLOR|raw }} 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-15deg, #ffffff 0%, {{ TM_HIGHLIGHTING_COLOR|raw }} 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(105deg, #ffffff 0%, {{ TM_HIGHLIGHTING_COLOR|raw }} 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='{{ TM_HIGHLIGHTING_COLOR|raw }}',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.fg-web-theme .fg-header-widget h3:after {
+    background : {{ TM_HIGHLIGHTING_COLOR|raw }};
 }
 
 .fg-web-theme .fg-login-widget .fg-back-button {

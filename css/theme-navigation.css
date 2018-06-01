@@ -23,13 +23,6 @@
 	-ms-transform: skew(-15deg);
 	-o-transform: skew(-15deg);
 	transform: skew(-15deg);
-	
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6d6d6d+0,ffc200+100 */
-	background: #6d6d6d; /* Old browsers */
-	background: -moz-linear-gradient(-15deg, #6d6d6d 0%, #ffc200 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(-15deg, #6d6d6d 0%,#ffc200 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(105deg, #6d6d6d 0%,#ffc200 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d6d6d', endColorstr='#ffc200',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 /* large screen main navigation level 1 */

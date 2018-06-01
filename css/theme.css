@@ -61,13 +61,13 @@ body {
 }
 
 .theme-mainarea .fg-container,
-.fg-team-special-page-wrapper {
+.fg-team-special-page-wrapper,
+.fg-web-page-sidebar-wrapper {
 	background-color: rgba(256,256,256,0.9); /* theme config */
 	margin: 4px 2px 0;
 	padding: 0 13px;
 }
-.fg-gallery-special-page-wrapper,
-.fg-web-page-sidebar-wrapper {
+.fg-gallery-special-page-wrapper {
 	background-color: rgba(256,256,256,0.9); /* theme config */
 	margin: 4px 0 0;
 	padding: 0 13px;
@@ -90,6 +90,7 @@ body {
 .fg-web-page-container {
 	margin-right: -16px;
 	margin-left: -16px;
+	display: flex;
 }
 
 
@@ -375,7 +376,7 @@ body {
   padding-top: 40px;
   min-height: 80px;
 }
-.fg-footer-sticky .fg-web-page-footer {
+.fg-footer-sticky .theme-footerarea {
   position: fixed;
   top: auto;
   right: 0;
