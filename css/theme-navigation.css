@@ -91,6 +91,12 @@
   }
 }
 
+/* more toggle */
+
+.dropdown-toggle i {
+	display: none;
+}
+
 /* large screen main navigation level 2 and 3 */
 
 .dropdown-menu {
