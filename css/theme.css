@@ -17,11 +17,17 @@ html {
 body {
 	height: 100%; /* move to fg-web-style? */
 }
+.fg-web-main-content,
+.fg-web-page-footer {
+    padding: 0; /* fg-web-style-override */
+}
 .theme-mainarea {
 	border-radius: 6px;
 	box-shadow: 0px 20px 50px rgba(0,0,0,0.16); /* theme config? */
 	margin: 0 auto 30px;
 	padding: 0;
+	position: relative;
+	z-index: 1;
 }
 @media (min-width: 768px) {
   .theme-mainarea {
@@ -54,7 +60,7 @@ body {
 	margin-bottom: 0;
 }
 
-.fg-container,
+.theme-mainarea .fg-container,
 .fg-team-special-page-wrapper {
 	background-color: rgba(256,256,256,0.9); /* theme config */
 	margin: 4px 2px 0;
@@ -82,8 +88,8 @@ body {
 .fg-column-container,
 .fg-article-special-contents-wrapper,
 .fg-web-page-container {
-	margin-right: -17px;
-	margin-left: -17px;
+	margin-right: -16px;
+	margin-left: -16px;
 }
 
 
@@ -250,7 +256,7 @@ body {
 .fg-web-main-nav-bar {
   position: relative;
   min-height: 35px;
-  margin: 50px -15px 0;
+  margin: 50px 0 0;
 
   display: flex;
   flex-wrap: nowrap;
@@ -368,8 +374,6 @@ body {
 .theme-footerarea {
   padding-top: 40px;
   min-height: 80px;
-  position: relative;
-  z-index: -1;
 }
 .fg-footer-sticky .fg-web-page-footer {
   position: fixed;
