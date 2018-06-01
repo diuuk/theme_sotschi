@@ -90,7 +90,11 @@ body {
 .fg-web-page-container {
 	margin-right: -16px;
 	margin-left: -16px;
-	display: flex;
+}
+@media (min-width: 992px) {
+	.fg-web-page-container.row {
+		display: flex;
+	}
 }
 
 
@@ -109,9 +113,7 @@ body {
 }
 @media only screen and (max-width: 991px) {
   .fg-web-page-header {
-    -webkit-box-shadow: -1px -1px 13px 1px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: -1px -1px 13px 1px rgba(0, 0, 0, 0.5);
-    box-shadow: -1px -1px 13px 1px rgba(0, 0, 0, 0.5);
+  	margin-top: 0;
   }
 }
 
@@ -300,6 +302,14 @@ body {
 	z-index: 1;
 }
 
+@media only screen and (min-width: 992px) {
+	.fg-web-header {
+		width: 200px;
+		right: 10px;
+		top: 0px;
+	}
+}
+
 .fg-logo-wrapper .fg-logo {
   display: block;
 }
@@ -365,8 +375,6 @@ body {
 -----------------------------------------------------------------------------*/
 
 .theme-footerarea {
-  padding-top: 40px;
-  min-height: 80px;
 }
 .fg-footer-sticky .theme-footerarea {
   position: fixed;
