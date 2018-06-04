@@ -107,11 +107,11 @@
 
 .fg-web-theme .fg-web-main-nav::before {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6d6d6d+0,ffc200+100  */
-	background: #6d6d6d; /* Old browsers */
-	background: -moz-linear-gradient(-15deg, #6d6d6d 0%, {{ TM_NAV_BACKGROUND_COLOR|raw }} 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(-15deg, {{ TM_NAV_BACKGROUND_COLOR|raw }} 0%,#ffc200 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(105deg, #6d6d6d 0%,{{ TM_NAV_BACKGROUND_COLOR|raw }} 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d6d6d', endColorstr='{{ TM_NAV_BACKGROUND_COLOR|raw }}',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	background: {{ TM_ACTIVE_MENU_COLOR|raw }}; /* Old browsers */
+	background: -moz-linear-gradient(-15deg, {{ TM_ACTIVE_MENU_COLOR|raw }} 0%, {{ TM_NAV_BACKGROUND_COLOR|raw }} 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-15deg, {{ TM_ACTIVE_MENU_COLOR|raw }} 0%,{{ TM_NAV_BACKGROUND_COLOR|raw }} 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(105deg, {{ TM_ACTIVE_MENU_COLOR|raw }} 0%,{{ TM_NAV_BACKGROUND_COLOR|raw }} 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ TM_ACTIVE_MENU_COLOR|raw }}', endColorstr='{{ TM_NAV_BACKGROUND_COLOR|raw }}',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 .fg-web-theme .fg-web-main-nav-bar .navbar-nav > li a {
     color : {{ TM_INVERSE_COLOR|raw }};
@@ -124,13 +124,13 @@
     color : {{ TM_MAIN_TEXT_COLOR|raw }};
 }
 .fg-web-theme .fg-web-main-nav-bar .navbar-nav .dropdown-menu {
-    background: #2c3137; 
+    background: {{ TM_ACTIVE_MENU_COLOR|raw }}; 
 }
 .fg-web-theme .fg-web-main-nav-bar .navbar-nav .dropdown-menu li {
-    color: {{ fgtwig.calculateOpacity(TM_BACKGROUND_COLOR|raw, 50)|raw }}; 
+    color: {{ TM_NAV_TEXT_COLOR|raw }}; 
 }
 .fg-web-theme .fg-web-main-nav-bar .navbar-nav .dropdown-menu li a {
-    color: rgba(255, 255, 255, 0.5) ;
+    color: {{ TM_NAV_TEXT_COLOR|raw }} ;
 }
 
 .fg-web-theme .fg-web-main-nav-bar .navbar-nav .dropdown-menu li.active > a,
@@ -144,17 +144,18 @@
     }
     .fg-web-theme .fg-web-main-nav-bar .navbar-nav li {
         border-color: #404851 !important;
-        color: #fff;
+        color: {{ TM_NAV_TEXT_COLOR|raw }};
     }
     .fg-web-theme .fg-web-main-nav-bar .navbar-nav li a {
-        color: #fff;
+        color: {{ TM_NAV_TEXT_COLOR|raw }};
     }
     .fg-web-theme .fg-web-main-nav-bar .navbar-nav li a:hover {
-        color: #29bfd4;
+        color: {{ TM_NAV_TEXT_COLOR|raw }};
     }
-    .fg-web-theme .fg-web-main-nav-bar .navbar-nav li .caret, .fg-web-theme .fg-web-main-nav-bar .navbar-nav li .fg-dropdown-toggle {
-        /*---do not convert to dynamic for moment*/
-        color: #fff;
+    .fg-web-theme .fg-web-main-nav-bar .navbar-nav li .caret,
+	.fg-web-theme .fg-web-main-nav-bar .navbar-nav li .fg-dropdown-toggle {
+        color: {{ fgtwig.calculateOpacity(TM_NAV_TEXT_COLOR|raw, 60)|raw }};
+		border-top-color: {{ fgtwig.calculateOpacity(TM_NAV_TEXT_COLOR|raw, 60)|raw }};
     }
     .fg-web-theme .fg-web-main-nav-bar .navbar-nav li.active > a, .fg-web-theme .fg-web-main-nav-bar .navbar-nav li.hover > a, .fg-web-theme .fg-web-main-nav-bar .navbar-nav li:hover > a {    
         color : {{ TM_ACCENT_COLOR|raw }} !important;
@@ -167,6 +168,7 @@
 	.fg-web-theme .fg-web-main-nav-bar .navbar-nav li:hover > .caret,
 	.fg-web-theme .fg-web-main-nav-bar .navbar-nav li:hover > .fg-dropdown-toggle {
         color : {{ TM_ACCENT_COLOR|raw }} !important;
+		border-top-color: {{ TM_ACCENT_COLOR|raw }};
     }
     .fg-web-theme .fg-web-main-nav-bar .navbar-nav .dropdown-menu {
         background: #394048;
