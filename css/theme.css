@@ -17,10 +17,6 @@ html {
 body {
 	height: 100%; /* move to fg-web-style? */
 }
-.fg-web-main-content,
-.fg-web-page-footer {
-    padding: 0; /* fg-web-style-override */
-}
 .theme-mainarea {
 	border-radius: 6px;
 	box-shadow: 0px 20px 50px rgba(0,0,0,0.16); /* theme config? */
