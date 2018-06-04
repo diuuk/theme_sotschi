@@ -58,21 +58,26 @@
 	letter-spacing: 0.5pt; /* theme config? */
 }
 
-@media only screen and (min-width: 992px) {
-.fg-web-main-nav.navbar-default .navbar-nav > li.active > a,
-.fg-web-main-nav.navbar-default .navbar-nav > li > a:hover {
-  border: 1px solid rgba(256,256,256,0.2); /* theme config */
-  padding: 3px 20px 3px 10px;
-  margin: 8px 2px;
-  background-color: rgba(256,256,256,0.1); /* theme config */
-  border-radius: 13px;
-}
 .fg-web-main-nav .navbar-nav > li > a {
     border: 1px solid transparent;
     padding: 3px 10px;
     margin: 8px 2px;
   }
 }
+@media only screen and (min-width: 992px) {
+  .fg-web-main-nav.navbar-default .navbar-nav > li.active > a,
+  .fg-web-main-nav.navbar-default .navbar-nav > li > a:hover {
+    border: 1px solid rgba(256,256,256,0.2); /* theme config */
+    padding: 3px 10px;
+    margin: 8px 2px;
+    background-color: rgba(256,256,256,0.1); /* theme config */
+    border-radius: 13px;
+  }
+  .fg-web-main-nav.navbar-default .navbar-nav > li.dropdown > a {
+    padding-right: 20px;
+  }
+}
+
 
 /* more toggle */
 
