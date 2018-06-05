@@ -388,6 +388,9 @@ body {
   z-index: 1;
   text-decoration: none;
 }
+.theme-footerarea .fg-columnbox {
+	margin: 20px 0;
+}
 
 
 /* -------------------------------------------------------------------------
