@@ -45,7 +45,10 @@
 }
 @media only screen and (min-width: 992px) {
   .fg-web-main-nav .navbar-nav li .caret {
-    display: none;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    border-top-color: white;
   }
 }
 .fg-web-main-nav .navbar-nav > li {
@@ -55,34 +58,31 @@
 	letter-spacing: 0.5pt; /* theme config? */
 }
 
-@media only screen and (min-width: 992px) {
-.fg-web-main-nav.navbar-default .navbar-nav > li.active > a,
-.fg-web-main-nav.navbar-default .navbar-nav > li > a:hover {
-  border: 1px solid rgba(256,256,256,0.2); /* theme config */
-  padding: 3px 10px;
-  margin: 8px 2px;
-  background-color: rgba(256,256,256,0.1); /* theme config */
-  border-radius: 13px;
-}
-.fg-web-main-nav .navbar-nav > li.dropdown > a::after {
-	content: "\f0d7";
-	font-family: "Font Awesome 5 Free";
-	font-weight: 400;
-	margin-left: 8px;
-	opacity: 0.6;
-}
-
-  .fg-web-main-nav .navbar-nav > li > a {
+.fg-web-main-nav .navbar-nav > li > a {
     border: 1px solid transparent;
     padding: 3px 10px;
     margin: 8px 2px;
   }
 }
+@media only screen and (min-width: 992px) {
+  .fg-web-main-nav.navbar-default .navbar-nav > li.active > a,
+  .fg-web-main-nav.navbar-default .navbar-nav > li > a:hover {
+    border: 1px solid rgba(256,256,256,0.2); /* theme config */
+    padding: 3px 10px;
+    margin: 8px 2px;
+    background-color: rgba(256,256,256,0.1); /* theme config */
+    border-radius: 13px;
+  }
+  .fg-web-main-nav.navbar-default .navbar-nav > li.dropdown > a {
+    padding-right: 20px;
+  }
+}
+
 
 /* more toggle */
 
 .dropdown-toggle i {
-	display: none;
+	
 }
 
 /* large screen main navigation level 2 and 3 */

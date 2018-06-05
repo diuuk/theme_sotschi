@@ -211,20 +211,14 @@ h1, h2, h3, h4, h5, h6 {
 * 03 - Main content
 -----------------------------------------------------------------------------*/
 
-.fg-web-theme .fg-web-main-content {
-  min-height: 300px;
-}
-@media only screen and (max-width: 991px) {
-  .fg-web-theme .fg-web-main-content > .container {
-    width: auto;
-    padding: 0;
-  }
-}
-
 /* element */
 
 .fg-widget-block {
 	margin: 10px 0; /* fg-web-style override */
+}
+@media only screen and (max-width: 1350px)
+.fg-grid-col-1 .fg-widget-block {
+    min-height: 0; /* cms-widget-styles.scss override */
 }
 
 /* Paginations (portrait element, …?) */
@@ -302,8 +296,13 @@ h1, h2, h3, h4, h5, h6 {
 * 03.01 - Header elements
 -----------------------------------------------------------------------------*/
 
-h1, h2, h3, h4, h5, h6 {
-  line-height: normal;
+.fg-web-theme .fg-header-widget h2,
+.fg-web-theme .fg-header-widget h3,
+.fg-web-theme .fg-header-widget h4,
+.fg-web-theme .fg-header-widget h5,
+.fg-web-theme .fg-header-widget h6 {
+	margin-top: 10px;
+	line-height: 1.2em;
 }
 
 .fg-header-widget {
