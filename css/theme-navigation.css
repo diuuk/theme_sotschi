@@ -237,21 +237,9 @@
   margin: 0 0 0 30px;
 }
 .fg-web-top-nav-icon {
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  right: 65px;
-  bottom: 0;
-  left: auto;
-  color: #ccc;
-  margin: auto;
-  margin: auto;
-  padding: 5px 7px;
-  height: 37px;
+  display: none !important; /* bootstrap override */
 }
 .fg-web-top-nav-icon .fa {
-  font-size: 17px;
-  line-height: 29px;
 }
 
 /* mobile navigation level 1 */
