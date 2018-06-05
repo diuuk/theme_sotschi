@@ -450,8 +450,8 @@ border-color: {{ fgtwig.calculateOpacity(TM_INVERSE_COLOR|raw, 10)|raw }};
 .fg-web-theme .fg-breadcrumb-block .fg-breadcrumbs li a {
     color: {{ TM_INVERSE_COLOR|raw }}; 
 }
-.fg-web-theme .fg-web-main-nav-bar .fg-web-nav-icon {
-    background : {{ fgtwig.calculateOpacity(TM_INVERSE_COLOR|raw, 10)|raw }}; 
+.fg-web-theme .fg-web-main-nav-bar .fg-web-nav-icon:before {
+    background : {{ TM_NAV_BACKGROUND_COLOR|raw }}; 
 }
 .fg-web-theme .form-group .form-control {
     /*background color */

@@ -181,36 +181,60 @@
 
 @media only screen and (max-width: 991px) {
     .fg-web-main-nav {
-      width: auto;
+      width: 250px;
       display: block;
       margin: 0;
       height: 0;
       min-height: 0;
       max-height: 70vh;
       overflow: hidden;
-      position: absolute;
-      top: 100%;
-      right: 15px;
+      position: fixed;
+      top: 40px;
+      right: -250px;
       bottom: auto;
-      left: 15px;
       z-index: 999;
+      -webkit-box-shadow: 0px 10px 20px rgba(0,0,0,0.16);;
+      -moz-box-shadow: 0px 10px 20px rgba(0,0,0,0.16);;
+      box-shadow: 0px 10px 20px rgba(0,0,0,0.16);;
     }
-
+	.fg-navbar-open .fg-web-main-nav {
+		right: 0;
+	    -webkit-transition: right 200ms ease;
+	    transition: right 200ms ease;
+	}
 }
 .fg-web-nav-icon {
-  position: absolute;
+  position: fixed;
   z-index: 2;
-  top: 5px;
-  right: 18px;
-  height: 28px;
-  padding: 5px 7px;
-  background: #ccc;
+  top: 0;
+  right: -20px;
+  padding: 0 40px 0 0;
 }
-.fg-haslogo .fg-web-nav-icon {
-  top: 25px;
+.fg-web-nav-icon::before {
+    background: #ccc;
+	content: "";
+	bottom: auto;
+	height: 40px;
+	width: 100%;
+	position: absolute;
+    -webkit-box-shadow: 0px 10px 20px rgba(0,0,0,0.16);;
+    -moz-box-shadow: 0px 10px 20px rgba(0,0,0,0.16);;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.16);;
+	-webkit-transform: skew(15deg);
+	-moz-transform: skew(15deg);
+	-ms-transform: skew(15deg);
+	-o-transform: skew(15deg);
+	transform: skew(15deg);
+	margin: 0;
+	padding: 0;
 }
+
 .fg-web-nav-icon .fa {
   font-size: 19px;
+  position: relative;
+  top: 10px;
+  right: 10px;
+  margin: 0 0 0 30px;
 }
 .fg-web-top-nav-icon {
   position: absolute;
