@@ -313,7 +313,7 @@ h1, h2, h3, h4, h5, h6 {
 	z-index: 1;
 	padding: 11px 13px;
 	overflow: hidden;
-	margin: -11px -13px 0;
+	margin: 0 -13px;
 }
 .fg-header-widget h2:before {
 	top: 0;
@@ -366,6 +366,9 @@ h1, h2, h3, h4, h5, h6 {
 .fg-gallery-rows,
 .fg-map-widget {
 	margin: 0 -13px;
+}
+.ug-thumb-wrapper {
+	background-color: transparent !important; /* inline style override */
 }
 
 /* -------------------------------------------------------------------------
