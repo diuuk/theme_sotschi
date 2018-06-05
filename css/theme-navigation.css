@@ -56,6 +56,7 @@
 .fg-web-main-nav .navbar-nav > li a {
 	color: rgba(256,256,256,1) !important; /* theme config */
 	letter-spacing: 0.5pt; /* theme config? */
+	background-color: transparent !important; /* bootstrap override */
 }
 
 .fg-web-main-nav .navbar-nav > li > a {
@@ -184,7 +185,7 @@
       width: 250px;
       display: block;
       margin: 0;
-      height: 0;
+      /* height: 0; */
       min-height: 0;
       max-height: 70vh;
       overflow: hidden;
@@ -193,9 +194,6 @@
       right: -250px;
       bottom: auto;
       z-index: 999;
-      -webkit-box-shadow: 0px 10px 20px rgba(0,0,0,0.16);;
-      -moz-box-shadow: 0px 10px 20px rgba(0,0,0,0.16);;
-      box-shadow: 0px 10px 20px rgba(0,0,0,0.16);;
     }
 	.fg-navbar-open .fg-web-main-nav {
 		right: 0;
@@ -248,7 +246,10 @@
   .fg-web-main-nav .navbar-nav {
     float: none;
     width: 100%;
-    margin: 0px 0 15px 0;
+    margin: 0;
+    -webkit-box-shadow: 0px 10px 20px rgba(0,0,0,0.16);
+    -moz-box-shadow: 0px 10px 20px rgba(0,0,0,0.16);
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.16);
   }
   .fg-web-main-nav .navbar-nav li {
     padding: 0;
@@ -297,6 +298,9 @@
     clear: both;
     margin: 0;
     padding: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
   }
   .fg-web-main-nav .navbar-nav .dropdown-menu .dropdown-menu {
     position: static !important;
