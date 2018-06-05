@@ -301,7 +301,7 @@ h1, h2, h3, h4, h5, h6 {
 .fg-web-theme .fg-header-widget h4,
 .fg-web-theme .fg-header-widget h5,
 .fg-web-theme .fg-header-widget h6 {
-	margin-top: 10px;
+	margin-top: 11px;
 	line-height: 1.2em;
 }
 
@@ -313,7 +313,7 @@ h1, h2, h3, h4, h5, h6 {
 	z-index: 1;
 	padding: 11px 13px;
 	overflow: hidden;
-	margin: 0 -13px;
+	margin: -11px -13px 0;
 }
 .fg-header-widget h2:before {
 	top: 0;
