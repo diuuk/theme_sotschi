@@ -474,6 +474,9 @@ button {
   left: 0;
   margin: auto;
 }
+.fg-gallery-special-page-wrapper {
+	width: 100%; /* test */
+}
 
 
 /* -------------------------------------------------------------------------

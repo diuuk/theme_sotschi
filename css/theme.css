@@ -56,6 +56,9 @@ body {
 	.fg-web-page-container.row {
 		display: flex;
 	}
+	.fg-portrait-row .row {
+		display: block;
+	}
 }
 .row {
 	margin-bottom: 0;
