@@ -56,9 +56,11 @@ body {
 	.fg-web-page-container.row {
 		display: flex;
 	}
-	.fg-portrait-row .row {
-		display: block;
-	}
+  .fg-portrait-row.row,
+  .fg-teams-innerpage-wrapper.row {
+    display: block;
+  }
+
 }
 .row {
 	margin-bottom: 0;
@@ -179,7 +181,7 @@ body {
 }
 .fg-web-top-nav-links li.active a,
 .fg-web-top-nav-links li a:hover {
-	
+
 }
 .fg-web-top-nav-links li a {
     padding: 3px 11px;
@@ -260,7 +262,7 @@ body {
 }
 @media only screen and (max-width: 767px) {
   .fg-web-main-nav-bar {
-    
+
   }
 }
 @media only screen and (min-width: 992px) {
@@ -323,7 +325,7 @@ body {
   .fg-logo-wrapper .fg-logo {
     padding: 5px 0;
   }
-  .fg-logo-wrapper .fg-logo .fg-shrinked, 
+  .fg-logo-wrapper .fg-logo .fg-shrinked,
   .fg-logo-wrapper .fg-logo .fg-original {
     top: 5px;
   }
@@ -356,7 +358,7 @@ body {
   .fg-logo-wrapper img.fg-original.fg-web-logo-md.hide {
     display: none !important;
   }
-  .fg-logo-wrapper img.fg-original, 
+  .fg-logo-wrapper img.fg-original,
   .fg-logo-wrapper img.fg-shrinked {
     position: absolute;
     top: 15px;
@@ -415,7 +417,7 @@ body {
 
 
 /* border-radius */
-.btn, 
+.btn,
 .alert,
 .dropdown-menu,
 input,
@@ -604,4 +606,3 @@ input,
   background: none;
 }
 */
-
