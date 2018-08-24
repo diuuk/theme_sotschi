@@ -56,13 +56,13 @@
 .fg-web-main-nav .navbar-nav > li a {
 	color: rgba(256,256,256,1) !important; /* theme config */
 	letter-spacing: 0.5pt; /* theme config? */
+	background-color: transparent !important; /* bootstrap override */
 }
 
 .fg-web-main-nav .navbar-nav > li > a {
     border: 1px solid transparent;
     padding: 3px 10px;
     margin: 8px 2px;
-  }
 }
 @media only screen and (min-width: 992px) {
   .fg-web-main-nav.navbar-default .navbar-nav > li.active > a,
@@ -182,53 +182,62 @@
 
 @media only screen and (max-width: 991px) {
     .fg-web-main-nav {
-      width: auto;
+      width: 250px;
       display: block;
       margin: 0;
-      height: 0;
+      /* height: 0; */
       min-height: 0;
       max-height: 70vh;
       overflow: hidden;
-      position: absolute;
-      top: 100%;
-      right: 15px;
+      position: fixed;
+      top: 40px;
+      right: -250px;
       bottom: auto;
-      left: 15px;
       z-index: 999;
     }
-
+	.fg-navbar-open .fg-web-main-nav {
+		right: 0;
+	    -webkit-transition: right 200ms ease;
+	    transition: right 200ms ease;
+	}
 }
 .fg-web-nav-icon {
-  position: absolute;
-  z-index: 2;
-  top: 5px;
-  right: 18px;
-  height: 28px;
-  padding: 5px 7px;
-  background: #ccc;
-}
-.fg-haslogo .fg-web-nav-icon {
-  top: 25px;
-}
-.fg-web-nav-icon .fa {
-  font-size: 19px;
-}
-.fg-web-top-nav-icon {
-  position: absolute;
+  position: fixed;
   z-index: 2;
   top: 0;
-  right: 65px;
-  bottom: 0;
-  left: auto;
-  color: #ccc;
-  margin: auto;
-  margin: auto;
-  padding: 5px 7px;
-  height: 37px;
+  right: -20px;
+  padding: 0 40px 0 0;
+}
+.fg-web-nav-icon::before {
+    background: #ccc;
+	content: "";
+	bottom: auto;
+	height: 40px;
+	width: 100%;
+	position: absolute;
+    -webkit-box-shadow: 0px 10px 20px rgba(0,0,0,0.16);;
+    -moz-box-shadow: 0px 10px 20px rgba(0,0,0,0.16);;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.16);;
+	-webkit-transform: skew(15deg);
+	-moz-transform: skew(15deg);
+	-ms-transform: skew(15deg);
+	-o-transform: skew(15deg);
+	transform: skew(15deg);
+	margin: 0;
+	padding: 0;
+}
+
+.fg-web-nav-icon .fa {
+  font-size: 19px;
+  position: relative;
+  top: 10px;
+  right: 10px;
+  margin: 0 0 0 30px;
+}
+.fg-web-top-nav-icon {
+  display: none !important; /* bootstrap override */
 }
 .fg-web-top-nav-icon .fa {
-  font-size: 17px;
-  line-height: 29px;
 }
 
 /* mobile navigation level 1 */
@@ -237,7 +246,10 @@
   .fg-web-main-nav .navbar-nav {
     float: none;
     width: 100%;
-    margin: 0px 0 15px 0;
+    margin: 0;
+    -webkit-box-shadow: 0px 10px 20px rgba(0,0,0,0.16);
+    -moz-box-shadow: 0px 10px 20px rgba(0,0,0,0.16);
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.16);
   }
   .fg-web-main-nav .navbar-nav li {
     padding: 0;
@@ -286,6 +298,9 @@
     clear: both;
     margin: 0;
     padding: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
   }
   .fg-web-main-nav .navbar-nav .dropdown-menu .dropdown-menu {
     position: static !important;
