@@ -112,6 +112,7 @@ body {
 	margin-top: 30px;
 	border-radius: 6px 6px 0 0;
 	padding: 0 0 20px;
+  z-index: 9000;
 }
 @media only screen and (max-width: 991px) {
   .fg-web-page-header {
@@ -122,23 +123,15 @@ body {
 /* Sticky header */
 
 .fg-header-sticky:not(.no-scroll) {
-  padding-top: 66px;
 }
 @media only screen and (min-width: 992px) {
   .fg-header-sticky:not(.no-scroll) {
-    padding-top: 113px;
   }
   .fg-header-sticky:not(.no-scroll).fg-haslogo {
-    padding-top: 174px;
   }
 }
 .fg-header-sticky:not(.no-scroll) .fg-web-page-header {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: auto;
-  left: 0;
-  z-index: 9999;
+
 }
 
 /* Additional navigation / language switch bar */

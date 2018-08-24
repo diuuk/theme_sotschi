@@ -54,7 +54,7 @@
 }
 .fg-web-titlebar-right-col {
   position: relative;
-  z-index: 1;
+  z-index: 10;
   margin-top: 7px;
 }
 .fg-web-page-title-bar.has-close-btn .fg-web-titlebar-right-col {
@@ -68,7 +68,7 @@
 .fg-web-page-title-bar input[type="text"] {
   padding: 6px 10px;
 }
-.fg-web-page-title-bar input[type="text"], 
+.fg-web-page-title-bar input[type="text"],
 .fg-web-page-title-bar .bootstrap-select {
   height: 34px;
   background: #fff;
@@ -215,6 +215,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .fg-widget-block {
 	margin: 10px 0; /* fg-web-style override */
+  min-height: 0; /* _cms-widget-styles.scss override */
+  padding: 0; /* _cms-widget-styles.scss override */
 }
 @media only screen and (max-width: 1350px)
 .fg-grid-col-1 .fg-widget-block {
@@ -237,7 +239,7 @@ h1, h2, h3, h4, h5, h6 {
 .fg-pagination li.disabled span i {
   opacity: .5;
 }
-.fg-pagination li > a, 
+.fg-pagination li > a,
 .fg-pagination li > span {
   border: 1px solid #ccc;
   margin-bottom: 5px;
@@ -253,13 +255,13 @@ h1, h2, h3, h4, h5, h6 {
   -ms-border-radius: 50%;
   border-radius: 50%;
 }
-.fg-pagination li > a.prev, 
+.fg-pagination li > a.prev,
 .fg-pagination li > span.prev {
   padding: 9px 18px;
   position: relative;
   left: -1px;
 }
-.fg-pagination li > a.next, 
+.fg-pagination li > a.next,
 .fg-pagination li > span.next {
   padding: 9px 18px;
   position: relative;
@@ -394,9 +396,9 @@ button {
   text-align: center;
 }
 
-.fg-grid-col-1 .fg-form-widget .form-group label, 
-.fg-grid-col-2 .fg-form-widget .form-group label, 
-.fg-grid-col-1 .fg-nl-subscription-widget .form-group label, 
+.fg-grid-col-1 .fg-form-widget .form-group label,
+.fg-grid-col-2 .fg-form-widget .form-group label,
+.fg-grid-col-1 .fg-nl-subscription-widget .form-group label,
 .fg-grid-col-2 .fg-nl-subscription-widget .form-group label {
     padding-top: 0; /* fg-web-style override */
     padding-bottom: 0; /* fg-web-style override */
@@ -408,7 +410,7 @@ button {
     -ms-border-radius: 6px;
 	border-radius: 6px;
 }
-.fg-form-widget fieldset > legend, 
+.fg-form-widget fieldset > legend,
 .fg-nl-subscription-widget fieldset > legend {
 	font-weight: inherit; /* fg-web-style override */
 	background-color: transparent; /* fg-web-style override */
@@ -456,6 +458,14 @@ button {
 }
 
 /* -------------------------------------------------------------------------
+* 03.06 - Article elements
+-----------------------------------------------------------------------------*/
+
+.fg-article-widget .fg-article {
+    padding: 0; /* _cms-widget-styles.scss override */
+}
+
+/* -------------------------------------------------------------------------
 * 03.11 - Gallery special page
 -----------------------------------------------------------------------------*/
 
@@ -486,11 +496,24 @@ button {
 .fg-calendar-detail-wrapper .fg-calendar-meta-details-block > li > .fg-right {
   font-weight: lighter;
 }
-
+.fg-calendar-detail-wrapper .fg-calendar-special-contents-wrapper .row {
+  display: block;
+}
 
 /* -------------------------------------------------------------------------
 * 03.12 - Article special page
 -----------------------------------------------------------------------------*/
+
+.fg-web-page-content-wrapper .fg-article-special-contents-wrapper.row {
+  display: block;
+}
+.fg-article-special-contents-wrapper .fg-thumb {
+  padding: 0 13px 0 0;
+  margin-left: -13px;
+}
+.fg-article-special-contents-wrapper section {
+  padding: 11px 0 0;
+}
 
 .fg-article-special-contents-wrapper .fg-article-content-block .fg-footer .fg-cat-tags > span {
 	border-radius: 12px;
@@ -498,4 +521,5 @@ button {
 .fg-article-special-contents-wrapper .fg-article-content-block .fg-footer {
     border: 0; /* fg-web-style override */
     padding: 0; /* fg-web-style override */
+    margin-bottom: 13px; /* _special-pages-minimal.scss override */
 }
