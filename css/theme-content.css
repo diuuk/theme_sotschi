@@ -33,13 +33,13 @@
   margin-right: 10px;
 }
 .fg-web-page-title-bar.has-close-btn .fg-web-titlebar-left-col {
-  width: calc(100% - 185px);
+  width: calc(100% - 195px);
   display: inline-block;
   float: none !important;
   vertical-align: middle;
 }
 .fg-web-page-title-bar.has-close-btn .fg-web-titlebar-left-col.close-btn-only {
-  width: calc(100% - 50px);
+  width: calc(100% - 60px);
 }
 .fg-web-page-title-bar.has-close-btn .fg-web-titlebar-left-col.close-btn-only + .fg-web-titlebar-right-col .fg-page-close {
   margin: 0;
@@ -268,6 +268,17 @@ h1, h2, h3, h4, h5, h6 {
   left: -1px;
 }
 
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+    border-bottom-right-radius: 50%; /* bootstrap override */
+    border-top-right-radius: 50%; /* bootstrap override */
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+    border-bottom-left-radius: 50%; /* bootstrap override */
+    border-top-left-radius: 50%; /* bootstrap override */
+}
+
 /* Datatables paginations (contact table element, …?) */
 
 .dataTables_paginate .paginate_button {
@@ -332,7 +343,7 @@ h1, h2, h3, h4, h5, h6 {
 	-o-transform: skew(-15deg);
 	transform: skew(-15deg);
 }
-.fg-header-widget h2 {
+.fg-web-theme .fg-header-widget h2 {
 	padding: 0; /* fg-web-style override */
 	margin-top: 0; /* fg-web-style override */
 	margin-bottom: 0; /* fg-web-style override */
@@ -463,6 +474,9 @@ button {
 
 .fg-article-widget .fg-article {
     padding: 0; /* _cms-widget-styles.scss override */
+}
+.fg-article-widget .fg-article-slider {
+  padding: 0;
 }
 
 /* -------------------------------------------------------------------------
