@@ -1,28 +1,30 @@
 /* large screen main navigation bar */
 
-.fg-web-main-nav {
-    width: 100%;
-    margin: 0 -50px 0 0;
-    border: 0; /* override bootstrap default */
-    border-radius: 0; /* override bootstrap default */
-    background-color: transparent; /* override bootstrap default */
-    min-height: 40px; /* override bootstrap default */
-}
-.fg-web-main-nav::before {
-    background-color: rgba(0,0,0,0.2);  /* theme config */
-	content: "";
-	bottom: auto;
-	height: 45px;
-	width: 100%;
-	position: absolute;
-    -webkit-box-shadow: 0px 10px 20px rgba(0,0,0,0.16);;
-    -moz-box-shadow: 0px 10px 20px rgba(0,0,0,0.16);;
-    box-shadow: 0px 10px 20px rgba(0,0,0,0.16);;
-	-webkit-transform: skew(-15deg);
-	-moz-transform: skew(-15deg);
-	-ms-transform: skew(-15deg);
-	-o-transform: skew(-15deg);
-	transform: skew(-15deg);
+@media only screen and (min-width: 992px) {
+  .fg-web-main-nav {
+      width: 100%;
+      margin: 0 -50px 0 0;
+      border: 0; /* override bootstrap default */
+      border-radius: 0; /* override bootstrap default */
+      background-color: transparent; /* override bootstrap default */
+      min-height: 40px; /* override bootstrap default */
+  }
+  .fg-web-main-nav::before {
+      background-color: rgba(0,0,0,0.2);  /* theme config */
+  	content: "";
+  	bottom: auto;
+  	height: 45px;
+  	width: 100%;
+  	position: absolute;
+      -webkit-box-shadow: 0px 10px 20px rgba(0,0,0,0.16);;
+      -moz-box-shadow: 0px 10px 20px rgba(0,0,0,0.16);;
+      box-shadow: 0px 10px 20px rgba(0,0,0,0.16);;
+  	-webkit-transform: skew(-15deg);
+  	-moz-transform: skew(-15deg);
+  	-ms-transform: skew(-15deg);
+  	-o-transform: skew(-15deg);
+  	transform: skew(-15deg);
+  }
 }
 
 /* large screen main navigation level 1 */
@@ -59,10 +61,12 @@
 	background-color: transparent !important; /* bootstrap override */
 }
 
-.fg-web-main-nav .navbar-nav > li > a {
+@media only screen and (min-width: 992px) {
+  .fg-web-main-nav .navbar-nav > li > a {
     border: 1px solid transparent;
     padding: 3px 10px;
     margin: 8px 2px;
+  }
 }
 @media only screen and (min-width: 992px) {
   .fg-web-main-nav.navbar-default .navbar-nav > li.active > a,
@@ -82,7 +86,7 @@
 /* more toggle */
 
 .dropdown-toggle i {
-	
+
 }
 
 /* large screen main navigation level 2 and 3 */
@@ -105,13 +109,13 @@
   transition: padding 200ms ease;
 }
 .fg-web-main-nav .dropdown:hover .dropdown-menu {
-    padding: 8px 0;	
+    padding: 8px 0;
 }
 .fg-web-main-nav .dropdown-menu li {
   font-size: 13px;
   padding: 0;
   position: relative;
-  
+
   overflow:hidden;
       max-height:0;
       -webkit-transition: max-height 200ms ease;
@@ -147,7 +151,7 @@
     width: 0;
     min-width: 0; /* bootstrap override */
     -webkit-transition: width 200ms ease;
-    transition: width 200ms ease;	
+    transition: width 200ms ease;
 }
 .fg-web-main-nav .fg-web-open-right a,
 .fg-web-main-nav .fg-web-open-left a {
@@ -171,7 +175,7 @@
   top: 100%;
   right: 0;
 }
-.fg-web-main-nav .dropdown:hover > .dropdown-menu, 
+.fg-web-main-nav .dropdown:hover > .dropdown-menu,
 .fg-web-main-nav .dropdown-submenu:hover > .dropdown-menu {
   display: block;
   margin-top: 0;
@@ -184,12 +188,9 @@
     .fg-web-main-nav {
       width: 250px;
       display: block;
-      margin: 0;
-      /* height: 0; */
-      min-height: 0;
-      max-height: 70vh;
+      margin: -15px 0 0;
       overflow: hidden;
-      position: fixed;
+      position: absolute;
       top: 40px;
       right: -250px;
       bottom: auto;
@@ -202,11 +203,12 @@
 	}
 }
 .fg-web-nav-icon {
-  position: fixed;
+  position: absolute;
   z-index: 2;
   top: 0;
   right: -20px;
   padding: 0 40px 0 0;
+  margin: -15px 0 0;
 }
 .fg-web-nav-icon::before {
     background: #ccc;
@@ -259,6 +261,13 @@
     float: none;
   }
 }
+media only screen and (min-width: 992px) {
+  .fg-web-main-nav .navbar-nav > li > a {
+    padding: 10px;
+    margin: 1px 0;
+  }
+}
+
 
 /* mobile navigation level 2 and 3, BITTE AUFRÄUMEN */
 
@@ -326,12 +335,12 @@
   .fg-web-main-nav .navbar-nav .dropdown.open > .caret:before {
     content: "\f107";
   }
-  .fg-web-main-nav .navbar-nav .fg-dropdown-toggle, 
+  .fg-web-main-nav .navbar-nav .fg-dropdown-toggle,
   .fg-web-main-nav .navbar-nav .caret {
     font-family: FontAwesome;
     border: none;
     display: inline-block;
-    width: 100px;
+    width: 60px;
     height: 40px;
     font-size: 20px;
     padding-right: 20px;
@@ -351,4 +360,3 @@
     content: "\f107";
   }
 }
-
