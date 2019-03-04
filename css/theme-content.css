@@ -7,7 +7,7 @@
 .fg-web-page-title-bar {
   position: relative;
   background-color: white;
-  padding: 0 15px;
+  padding: 0 13px;
 }
 .fg-theme-page-title-container {
 	margin-top: 0;
@@ -214,7 +214,7 @@ h1, h2, h3, h4, h5, h6 {
 /* element */
 
 .fg-widget-block {
-	margin: 10px 0; /* fg-web-style override */
+	margin: 10px; /* fg-web-style override */
   min-height: 0; /* _cms-widget-styles.scss override */
   padding: 0; /* _cms-widget-styles.scss override */
 }
@@ -326,7 +326,7 @@ h1, h2, h3, h4, h5, h6 {
 	z-index: 1;
 	padding: 11px 13px;
 	overflow: hidden;
-	margin: -11px -13px 0;
+	margin: -11px -2px 0;
 }
 .fg-header-widget h2:before {
 	top: 0;
@@ -370,6 +370,11 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   margin: auto;
 }
+.fg-header-widget h4,
+.fg-header-widget h5,
+.fg-header-widget h6 {
+	padding: 0 0 10px 0;
+}
 
 /* -------------------------------------------------------------------------
 * 03.02 - Image/video elements
@@ -378,7 +383,7 @@ h1, h2, h3, h4, h5, h6 {
 .fg-image-gallery-widget,
 .fg-gallery-rows,
 .fg-map-widget {
-	margin: 0 -13px;
+	margin: -11px -2px 0;
 }
 .ug-thumb-wrapper {
 	background-color: transparent !important; /* inline style override */
@@ -472,8 +477,12 @@ button {
 * 03.06 - Article elements
 -----------------------------------------------------------------------------*/
 
+.fg-article-widget {
+  margin-left: -7px;
+  margin-right: -7px;
+}
 .fg-article-widget .fg-article {
-    padding: 0; /* _cms-widget-styles.scss override */
+    padding: 0 7px; /* _cms-widget-styles.scss override */
 }
 .fg-article-widget .fg-article-slider {
   padding: 0;
@@ -532,10 +541,12 @@ button {
 }
 .fg-article-special-contents-wrapper .fg-thumb {
   padding: 0 13px 0 0;
-  margin-left: -13px;
 }
 .fg-article-special-contents-wrapper section {
-  padding: 11px 0 0;
+  padding: 11px 13px 0;
+}
+.fg-article-special-contents-wrapper section main > div {
+  display: inline;
 }
 
 .fg-article-detail-wrapper .fg-article-details-block {
@@ -543,7 +554,9 @@ button {
   padding: 0; /* _special-pages-minimal.scss override */
   margin: 4px 0 0; /* _special-pages-minimal.scss override */
 }
-
+.fg-article-detail-wrapper .fg-article-details-block:first-child {
+  margin-bottom: 20px;
+}
 .fg-article-special-contents-wrapper .fg-article-content-block .fg-footer .fg-cat-tags > span {
 	border-radius: 12px;
 }

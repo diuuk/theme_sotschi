@@ -2,11 +2,11 @@
     {% for fonts in fontsArray %}
         @import url(https://fonts.googleapis.com/css?family={{ fonts|raw }});
     {% endfor %}
-{% endif %} 
+{% endif %}
 
 /*font-family: 'PT Sans', sans-serif;*/
-.fg-web-theme  .fg-body-bg header *, 
-.fg-web-theme  .fg-body-bg main  *, 
+.fg-web-theme  .fg-body-bg header *,
+.fg-web-theme  .fg-body-bg main  *,
 .fg-web-theme  .fg-body-bg footer  *,
 .fg-body-ckeditor.fg-web-theme * {
   /*----------------------------------------------------------------
@@ -22,7 +22,7 @@
     font-style: italic;
 {% else %}
     font-style: normal;
-{% endif %} 
+{% endif %}
 {% if( font.TM_MAIN_TEXT.isUppercase is defined and font.TM_MAIN_TEXT.isUppercase == 1 ) %}
     text-transform: uppercase;
 {% else %}
@@ -30,9 +30,9 @@
 {% endif %}
 
   /* main text style override on  other elements */
-  
+
   /*----------------------------------------------------------------
-  header section 
+  header section
   -------------------------------------------------------------------*/
   /* heading style override on  other elements */
   /*----------------------------------------------------------------
@@ -57,21 +57,21 @@
   font-weight: bold !important;
 }
 .fg-web-theme .fg-body-bg .fg-calendar-event-widget .fg-event-block .fg-event-title {
-{% if(font.TM_MAIN_TEXT.fontName is defined and font.TM_MAIN_TEXT.fontName is not empty) %}
-    font-family: {{ font.TM_MAIN_TEXT.fontName|raw }};
+{% if(font.TM_HEADINGS.fontName is defined and font.TM_HEADINGS.fontName is not empty) %}
+    font-family: {{ font.TM_HEADINGS.fontName|raw }};
 {% endif %}
-{% if(font.TM_MAIN_TEXT.fontStrength is defined and font.TM_MAIN_TEXT.fontStrength is not empty) %}
-    font-weight: {{ font.TM_MAIN_TEXT.fontStrength == 'lighter' ? '300' : font.TM_MAIN_TEXT.fontStrength|raw }};
+{% if(font.TM_HEADINGS.fontStrength is defined and font.TM_HEADINGS.fontStrength is not empty) %}
+    font-weight: {{ font.TM_HEADINGS.fontStrength == 'lighter' ? '300' : font.TM_HEADINGS.fontStrength|raw }};
 {% endif %}
-{% if( font.TM_MAIN_TEXT.isItalic is defined and font.TM_MAIN_TEXT.isItalic == 1 ) %}
+{% if( font.TM_HEADINGS.isItalic is defined and font.TM_HEADINGS.isItalic == 1 ) %}
     font-style: italic;
 {% else %}
-    font-style: normal;    
-{% endif %} 
-{% if( font.TM_MAIN_TEXT.isUppercase is defined and font.TM_MAIN_TEXT.isUppercase == 1 ) %}
+    font-style: normal;
+{% endif %}
+{% if( font.TM_HEADINGS.isUppercase is defined and font.TM_HEADINGS.isUppercase == 1 ) %}
     text-transform: uppercase;
 {% else %}
-    text-transform: none;    
+    text-transform: none;
 {% endif %}
 }
 .fg-web-theme .fg-body-bg .form-group *:not(.fa) {
@@ -84,9 +84,9 @@
 {% if( font.TM_MAIN_TEXT.isItalic is defined and font.TM_MAIN_TEXT.isItalic == 1 ) %}
     font-style: italic;
 {% else %}
-    font-style: normal;    
-{% endif %} 
-    text-transform: none;   
+    font-style: normal;
+{% endif %}
+    text-transform: none;
 }
 .fg-web-theme .ug-gallery-wrapper .ug-textpanel-description {
 {% if(font.TM_MAIN_TEXT.fontName is defined and font.TM_MAIN_TEXT.fontName is not empty) %}
@@ -98,12 +98,12 @@
 {% if( font.TM_MAIN_TEXT.isItalic is defined and font.TM_MAIN_TEXT.isItalic == 1 ) %}
     font-style: italic;
 {% else %}
-    font-style: normal;    
-{% endif %} 
+    font-style: normal;
+{% endif %}
 {% if( font.TM_MAIN_TEXT.isUppercase is defined and font.TM_MAIN_TEXT.isUppercase == 1 ) %}
     text-transform: uppercase;
 {% else %}
-    text-transform: none;    
+    text-transform: none;
 {% endif %}
 }
 
@@ -117,12 +117,12 @@
 {% if( font.TM_MAIN_TEXT.isItalic is defined and font.TM_MAIN_TEXT.isItalic == 1 ) %}
     font-style: italic;
 {% else %}
-    font-style: normal;    
-{% endif %} 
+    font-style: normal;
+{% endif %}
 {% if( font.TM_MAIN_TEXT.isUppercase is defined and font.TM_MAIN_TEXT.isUppercase == 1 ) %}
     text-transform: uppercase;
 {% else %}
-    text-transform: none;    
+    text-transform: none;
 {% endif %}
 }
 .fg-web-theme .fg-body-bg header h1, .fg-web-theme .fg-body-bg header h2, .fg-web-theme .fg-body-bg header h3, .fg-web-theme .fg-body-bg header h4, .fg-web-theme .fg-body-bg header h5, .fg-web-theme .fg-body-bg header h6, .fg-web-theme .fg-body-bg main h1, .fg-web-theme .fg-body-bg main h2, .fg-web-theme .fg-body-bg main h3, .fg-web-theme .fg-body-bg main h4, .fg-web-theme .fg-body-bg main h5, .fg-web-theme .fg-body-bg main h6, .fg-web-theme .fg-body-bg footer h1, .fg-web-theme .fg-body-bg footer h2, .fg-web-theme .fg-body-bg footer h3, .fg-web-theme .fg-body-bg footer h4, .fg-web-theme .fg-body-bg footer h5, .fg-web-theme .fg-body-bg footer h6 {
@@ -135,12 +135,12 @@
 {% if( font.TM_HEADINGS.isItalic is defined and font.TM_HEADINGS.isItalic == 1 ) %}
     font-style: italic;
 {% else %}
-    font-style: normal;    
-{% endif %} 
+    font-style: normal;
+{% endif %}
 {% if( font.TM_HEADINGS.isUppercase is defined and font.TM_HEADINGS.isUppercase == 1 ) %}
     text-transform: uppercase;
 {% else %}
-    text-transform: none;    
+    text-transform: none;
 {% endif %}
 }
 .fg-web-theme .fg-body-bg .fg-login-widget .form-group .fg-submit {
@@ -153,15 +153,15 @@
 {% if( font.TM_HEADINGS.isItalic is defined and font.TM_HEADINGS.isItalic == 1 ) %}
     font-style: italic;
 {% else %}
-    font-style: normal;    
-{% endif %} 
+    font-style: normal;
+{% endif %}
 {% if( font.TM_HEADINGS.isUppercase is defined and font.TM_HEADINGS.isUppercase == 1 ) %}
     text-transform: uppercase;
 {% else %}
-    text-transform: none;    
+    text-transform: none;
 {% endif %}
 }
-.fg-web-theme .fg-body-bg .fg-web-main-nav li a { 
+.fg-web-theme .fg-body-bg .fg-web-main-nav li a {
 {% if(font.TM_NAVIGATION.fontName is defined and font.TM_NAVIGATION.fontName is not empty) %}
     font-family: {{ font.TM_NAVIGATION.fontName|raw }};
 {% endif %}
@@ -171,12 +171,12 @@
 {% if( font.TM_NAVIGATION.isItalic is defined and font.TM_NAVIGATION.isItalic == 1 ) %}
     font-style: italic;
 {% else %}
-    font-style: normal;    
-{% endif %} 
+    font-style: normal;
+{% endif %}
 {% if( font.TM_NAVIGATION.isUppercase is defined and font.TM_NAVIGATION.isUppercase == 1 ) %}
     text-transform: uppercase;
 {% else %}
-    text-transform: none;    
+    text-transform: none;
 {% endif %}
 }
 .fg-web-theme .fg-body-bg .fg-article-widget .fg-article-wrapper .fg-content {
@@ -217,7 +217,7 @@
   {% if( font.TM_HEADINGS.isItalic is defined and font.TM_HEADINGS.isItalic == 1 ) %}
     font-style: italic;
   {% else %}
-    font-style: normal;    
+    font-style: normal;
   {% endif %}
 }
 
@@ -231,12 +231,12 @@
 {% if( font.TM_NAVIGATION.isItalic is defined and font.TM_NAVIGATION.isItalic == 1 ) %}
     font-style: italic;
 {% else %}
-    font-style: normal;    
-{% endif %} 
+    font-style: normal;
+{% endif %}
 {% if( font.TM_NAVIGATION.isUppercase is defined and font.TM_NAVIGATION.isUppercase == 1 ) %}
     text-transform: uppercase;
 {% else %}
-    text-transform: none;    
+    text-transform: none;
 {% endif %}
 }
 
@@ -251,12 +251,12 @@
 	{% if( font.TM_HEADINGS.isItalic is defined and font.TM_HEADINGS.isItalic == 1 ) %}
 		font-style: italic;
 	{% else %}
-		font-style: normal;    
-	{% endif %} 
+		font-style: normal;
+	{% endif %}
 	{% if( font.TM_HEADINGS.isUppercase is defined and font.TM_HEADINGS.isUppercase == 1 ) %}
 		text-transform: uppercase;
 	{% else %}
-		text-transform: none;    
+		text-transform: none;
 	{% endif %}
 }
 
@@ -270,13 +270,13 @@
 {% if( font.TM_MAIN_TEXT.isItalic is defined and font.TM_MAIN_TEXT.isItalic == 1 ) %}
     font-style: italic;
 {% else %}
-    font-style: normal;    
-{% endif %} 
+    font-style: normal;
+{% endif %}
 {% if( font.TM_MAIN_TEXT.isUppercase is defined and font.TM_MAIN_TEXT.isUppercase == 1 ) %}
     text-transform: uppercase;
 {% else %}
-    text-transform: none;    
-{% endif %}					
+    text-transform: none;
+{% endif %}
 }
 
 .fg-web-theme .fg-body-bg .fg-web-page-container .fg-supplementary-widget .panel-group .panel .panel-heading .panel-title{
@@ -289,11 +289,11 @@
 {% if( font.TM_MAIN_TEXT.isItalic is defined and font.TM_MAIN_TEXT.isItalic == 1 ) %}
     font-style: italic;
 {% else %}
-    font-style: normal;    
-{% endif %} 
+    font-style: normal;
+{% endif %}
 {% if( font.TM_MAIN_TEXT.isUppercase is defined and font.TM_MAIN_TEXT.isUppercase == 1 ) %}
     text-transform: uppercase;
 {% else %}
-    text-transform: none;    
-{% endif %}							
+    text-transform: none;
+{% endif %}
 }
