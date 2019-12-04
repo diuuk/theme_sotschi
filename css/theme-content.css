@@ -383,7 +383,7 @@ h1, h2, h3, h4, h5, h6 {
 .fg-image-gallery-widget,
 .fg-gallery-rows,
 .fg-map-widget {
-	margin: -11px -2px 0;
+	margin: 0 -2px;
 }
 .ug-thumb-wrapper {
 	background-color: transparent !important; /* inline style override */
@@ -486,6 +486,29 @@ button {
 }
 .fg-article-widget .fg-article-slider {
   padding: 0;
+}
+.fg-article-widget .fg-article-wrapper {
+  margin: 0 10px;
+}
+.fg-article-widget .fg-article-wrapper .fg-content {
+  margin: 0;
+}
+.fg-article-widget .fg-article-wrapper .pl-3 {
+  padding-left: 0 !important; /* bootstrap override */
+}
+.fg-article-widget .fg-article-wrapper .pr-3 {
+  padding-right: 0 !important; /* bootstrap override */
+}
+
+/* -------------------------------------------------------------------------
+* 03.07 - Text elements
+-----------------------------------------------------------------------------*/
+
+.fg-grid-col-1 .fg-text-widget-wrapper > p,
+.fg-grid-col-1 .fg-text-widget-wrapper > div,
+.fg-grid-col-2 .fg-text-widget-wrapper > p,
+.fg-grid-col-2 .fg-text-widget-wrapper > div {
+    max-width: 100%;
 }
 
 /* -------------------------------------------------------------------------

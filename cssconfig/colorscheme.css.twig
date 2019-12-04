@@ -112,15 +112,14 @@
 }
 }
 .fg-web-theme .fg-web-main-nav-bar .navbar-nav > li a {
-    color : {{ TM_FOOTER_BACKGROUND_COLOR|raw }};
+    color : {{ TM_NAV_TEXT_COLOR|raw }};
 }
 .fg-web-theme .fg-web-main-nav-bar .navbar-nav > li a:hover {
-    color : {{ TM_MAIN_TEXT_COLOR|raw }};
+    color : {{ TM_NAV_TEXT_COLOR|raw }};
 }
 .fg-web-theme .fg-web-main-nav-bar .navbar-nav > li.active > a,
 .fg-web-theme .fg-web-main-nav-bar .navbar-nav > li.hover > a {
-    color : {{ TM_MAIN_TEXT_COLOR|raw }};
-    border-color: {{ fgtwig.calculateOpacity(TM_FOOTER_BACKGROUND_COLOR|raw, 10)|raw }};
+    color : {{ TM_ACCENT_COLOR|raw }} !important;
 }
 .fg-web-theme .fg-web-main-nav-bar .navbar-nav .dropdown-menu {
     background: {{ TM_NAV_BACKGROUND_COLOR_2|raw }};
@@ -155,7 +154,9 @@
         color: {{ fgtwig.calculateOpacity(TM_NAV_TEXT_COLOR|raw, 60)|raw }};
 		border-top-color: {{ fgtwig.calculateOpacity(TM_NAV_TEXT_COLOR|raw, 60)|raw }};
     }
-    .fg-web-theme .fg-web-main-nav-bar .navbar-nav li.active > a, .fg-web-theme .fg-web-main-nav-bar .navbar-nav li.hover > a, .fg-web-theme .fg-web-main-nav-bar .navbar-nav li:hover > a {
+    .fg-web-theme .fg-web-main-nav-bar .navbar-nav li.active > a,
+    .fg-web-theme .fg-web-main-nav-bar .navbar-nav li.hover > a,
+    .fg-web-theme .fg-web-main-nav-bar .navbar-nav li:hover > a {
         color : {{ TM_ACCENT_COLOR|raw }} !important;
         background: none !important;
     }
@@ -422,8 +423,8 @@
 }
 
 .fg-web-theme .fg-web-page-title-bar input[type="text"], .fg-web-theme .fg-web-page-title-bar .bootstrap-select {
-    border-color: {{ fgtwig.calculateOpacity(TM_FOOTER_BACKGROUND_COLOR|raw, 10)|raw }};
-    background: {{TM_BACKGROUND_COLOR|raw}};
+    border-color : {{ fgtwig.calculateOpacity(TM_MAIN_TEXT_COLOR|raw, 30)|raw }} !important;
+    background: {{ TM_INPUT_FIELDS_COLOR|raw }};
     color: {{ fgtwig.calculateOpacity(TM_FOOTER_BACKGROUND_COLOR|raw, 50)|raw }};
 }
 
@@ -481,7 +482,7 @@
     border-color : {{ fgtwig.calculateOpacity(TM_MAIN_TEXT_COLOR|raw, 30)|raw }} !important;
 }
 .fg-web-theme .bootstrap-select .dropdown-menu {
-    background: {{ fgtwig.calculateOpacity(TM_INPUT_FIELDS_COLOR|raw, 100)|raw }};
+    background: {{ TM_INPUT_FIELDS_COLOR|raw }};
     color: {{ TM_MAIN_TEXT_COLOR|raw }} !important;
     border-color : {{ fgtwig.calculateOpacity(TM_MAIN_TEXT_COLOR|raw, 30)|raw }} !important;
 }
